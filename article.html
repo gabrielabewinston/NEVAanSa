@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NEVAanSa.gov: Stunning Solar Activity Recorded</title>
+    <style>
+        html {
+            background: 
+                linear-gradient(to top, rgb(88, 88, 88), transparent),
+                linear-gradient(to bottom, #6a6d84, #3e3a60);
+            min-height: 100%;
+            margin: 0;
+        }
+
+        body {
+            position: relative;
+            background: 
+                linear-gradient(#acacac, #ffffff) padding-box,
+                linear-gradient(135deg, #595959, #717171, #6a6a6a) border-box;
+            border: 12px solid transparent;
+            outline: 4px solid #313131;
+            outline-offset: -13px;
+            box-shadow: 0 0 0 6px #292929;
+            color: #000000;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bolder;
+            line-height: 1.5;
+            max-width: 720px;
+            margin: 2em auto;
+            padding: 2em;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            background: linear-gradient(45deg, rgb(0, 0, 0), #2f2f2f);
+            filter: blur(18px);
+            transform: translate(8px, 10px);
+            z-index: -1;
+        }
+
+        /* Agency Masthead & Navigation Bar */
+        .masthead {
+            border-bottom: 3px double #392c2c;
+            padding-bottom: 0.8em;
+            margin-bottom: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .agency-name {
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: #171a7c;
+            margin: 0;
+        }
+
+        .agency-sub {
+            font-size: 0.75rem;
+            color: #393939;
+            margin: 0;
+        }
+
+        .nav-bar {
+            background: #343434;
+            padding: 0.4em 0.8em;
+            margin-bottom: 1.5em;
+            font-size: 0.85rem;
+            display: flex;
+            gap: 1.2em;
+            flex-wrap: wrap;
+        }
+
+        .nav-bar span {
+            color: #e0e0e0;
+            cursor: default;
+        }
+
+        .nav-bar span.active {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Ticker */
+        .ticker {
+            background: #2127d9;
+            border: 4px solid #171a7c;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 0.3em 0;
+            margin-bottom: 1.5em;
+        }
+
+        .ticker-text {
+            display: inline-block;
+            color: #ffffff;
+            font-weight: bolder;
+            padding-left: 100%;
+            animation: ticker-scroll 12s linear infinite;
+        }
+
+        @keyframes ticker-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ticker-text {
+                animation: none;
+                padding-left: 0;
+            }
+        }
+
+        /* Article Header & Metadata */
+        .category-tag {
+            display: inline-block;
+            background: #171a7c;
+            color: #ffffff;
+            font-size: 0.75rem;
+            padding: 0.2em 0.6em;
+            letter-spacing: 1px;
+            margin-bottom: 0.4em;
+        }
+
+        h1 {
+            margin: 0.2em 0 0.4em;
+            line-height: 1.2;
+            border-bottom: 2px solid #392c2c;
+            padding-bottom: 0.4em;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #222222;
+            margin-bottom: 1.5em;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5em;
+        }
+
+        .date {
+            font-style: italic;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .date strong {
+            color: rgb(0, 0, 195);
+            font-weight: bolder;
+        }
+
+        p {
+            margin: 0 0 1em;
+        }
+
+        .gap {
+            margin-bottom: 2.5em;
+        }
+
+        /* Stealth Link Styling */
+        .hidden-link {
+            color: inherit;
+            text-decoration: none;
+            cursor: text;
+        }
+
+        .hidden-link::selection {
+            background: #2127d9;
+            color: #ffffff;
+        }
+
+        /* Framed Figure Box */
+        .figure-box {
+            border: 2px solid #392c2c;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 1em;
+            margin: 1.8em 0;
+        }
+
+        .figure-box h2 {
+            font-size: 1.1rem;
+            margin: 0 0 0.8em;
+            border-bottom: 1px dashed #392c2c;
+            padding-bottom: 0.4em;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto 0.8em;
+            border: 2px solid #111111;
+        }
+
+        .caption {
+            font-size: 0.8rem;
+            color: #222222;
+            margin: 0;
+        }
+
+        /* Official Footer */
+        .site-footer {
+            margin-top: 2.5em;
+            padding-top: 1em;
+            border-top: 3px double #392c2c;
+            font-size: 0.75rem;
+            color: #2c2222;
+            text-align: center;
+        }
+
+        .loader {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 22px;
+            height: 22px;
+            border: 4px solid #ffffff;
+            border-top: 4px solid rgba(0, 0, 0, 0);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            transition: opacity 0.4s ease;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="masthead">
+        <div>
+            <p class="agency-name">NEVAanSa.gov</p>
+            <p class="agency-sub">NATIONAL ENVIRONMENTAL AND ASTRONOMICAL AGENCY</p>
+        </div>
+        <p class="agency-sub">ARCHIVE ID: #0107-2011-SOL</p>
+    </div>
+
+    <div class="nav-bar">
+        <span>HOME</span>
+        <span class="active">PRESS RELEASES</span>
+        <span>DEEP SPACE</span>
+        <span>OBSERVATORIES</span>
+        <span>PUBLIC RECORDS</span>
+    </div>
+
+    <div class="ticker">
+        <span class="ticker-text">NEVAanSA: National EnVironmental and Astronomical Agency. Official Article Site. </span>
+    </div>
+
+    <span class="category-tag">ASTRONOMY // ANOMALY REPORT</span>
+    <h1>Stunning Solar Activity Recorded</h1>
+    
+    <div class="article-meta">
+        <p class="date">Published: January 7th, 20<strong>11</strong></p>
+        <span>By: NEVAanSa Public Affairs Desk</span>
+    </div>
+
+    <p>Just like the regular cycle us humans and other creatures undergo, we always end at a certain point in our lives, that we all know as death. Not only do organisms go through this in their final stages, anything you can think of has a form of death.</p>
+
+    <p class="gap">After death, organisms always leave something behind, whether it be mentally or physically. Stars do this physically after all of it gives up. This is called a planetary nebulae, though currently, what we have recently discovered here at NevastraiAnsa (abbreviated from now on in this article as NEVAanSa) is more than just a stellar remnant.</p>
+
+    <p>We have found yet another stunning visual of a <i>NEBULA</i>, or another term for it, <i>NEBULAE.</i> The recently discovered anomaly is shown to be in a very odd shape and form, reminiscent of the Mandelbrot Set, specifically in its first state. Though it is not completely verified whether this anomaly is what we have perceived it to be.</p>
+
+    <p>Here at NEVAanSa, we rely on statistics our machines have finalized and analyzed thoroughly, and with the technology we currently have, these work together and are programmed and built to run smoothly. The strongest match for this anomaly has been determined to be a nebula.</p>
+
+    <p>This nebula is currently 11111 light years away from <a href="vessel 1.html" class="hidden-link">us</a>.
+
+    <div class="figure-box">
+        <h2>FIG 1.1 — Recently Discovered Anomaly</h2>
+        <img src="place holder.png" alt="The recently discovered anomaly">
+        <p class="caption">Courtesy of photo: John Doe, NEVAanSA Researcher. [LOGGED: 01/07/2011]</p>
+    </div>
+
+    <p>Everyone here at NEVAanSa has never seen something this astonishing before, though it has not been fully verified if this anomaly really seems as it is, as technology in this current year is a bit slow and a tad bit inaccurate. Despite all this, we hope that we still make more discoveries here at NEVAanSa.</p>
+
+    <div class="site-footer">
+        OFFICIAL ARCHIVE RECORD &bull; NEVAanSa PUBLIC DOMAIN &bull; ALL TRANSMISSIONS MONITORED
+    </div>
+
+    <div class="loader" id="loader"></div>
+
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                const loader = document.getElementById("loader");
+                if (loader) {
+                    loader.style.opacity = "0";
+                    setTimeout(() => loader.remove(), 400);
+                }
+            }, 600);
+        });
+    </script>
+</body>
+</html>

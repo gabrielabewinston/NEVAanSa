@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REDIRECTING</title>
+    <style>
+        html, body {
+            background: #ffffff;
+            margin: 0;
+        }
+
+        body {
+            color: #0011ff;
+            font-size: 30px;
+            font-family: monospace;
+            padding: 2em;
+            min-height: 80vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .line {
+            opacity: 0;
+            transition: opacity 0.2s;
+            margin: 0.4em 0;
+        }
+
+        .line.show {
+            opacity: 1;
+        }
+
+        .line.bold {
+            color: #0008ff1b;
+            font-weight: bold;
+        }
+
+        .hidden-note {
+            color: #ffffff;
+            background: #ffffff;
+        }
+
+        .hidden-note::selection {
+            color: #00b303;
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="line" id="l1">REDIRECTING...</p>
+    <p class="line" id="l2">Any moment now!</p>
+    <p class="line" id="l3">Remember: patience is the key</p>
+    <p class="line bold" id="l4">everything isnt what you see</p>
+    <p class="line bold" id="l5"><i>What are you looking for?</i></iWhat><span class="hidden-note">They want information.</span></p>
+
+    <script>
+        const delays = [40, 2000, 2200, 5000, 6800];
+        const ids = ["l1", "l2", "l3", "l4", "l5"];
+
+        ids.forEach(function (id, i) {
+            setTimeout(function () {
+                document.getElementById(id).classList.add("show");
+            }, delays[i]);
+        });
+
+        setTimeout(function () {
+            location.replace("article.html");
+        }, 8400);
+    </script>
+
+</body>
+</html>

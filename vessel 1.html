@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vessel</title>
+    <style>
+        html {
+            background-color: black;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-size: large;
+            align-items: center;
+            justify-content: center;
+            margin: 4em auto;
+            color: rgb(255, 255, 255);
+            font-family: initial;
+        }
+        .intro-text {
+            font-size: x-large;
+            margin-bottom: 1.5em;
+            line-height: 1.4;
+        } 
+        .sets {
+            font-size: 1.1rem;
+            margin-bottom: 1.2em;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+        .hints {
+            text-align: left;
+            font-size: 0.9rem;
+            color: #cccccc;
+            padding: 1em 0;
+            margin-bottom: 1.5em;
+            line-height: 1.5;
+        }
+        .hints p {
+            margin: 0.5em 0;
+        }
+        input[type="text"] {
+            background: #111111;
+            border: 1px solid #555555;
+            color: #ffffff;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1rem;
+            padding: 0.6em 1em;
+            text-align: center;
+            outline: none;
+            width: 200px;
+        }
+        input[type="text"]:focus {
+            border-color: #ffffff;
+        }
+        button {
+            background: #222222;
+            border: 1px solid #555555;
+            color: #ffffff;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1rem;
+            padding: 0.6em 1em;
+            cursor: pointer;
+            margin-left: 0.5em;
+        }
+        button:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #595959;
+        }
+        #status {
+            margin-top: 1em;
+            font-size: 0.85rem;
+            color: #ffffff;
+            height: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="intro-text">
+        all your efforts, will pool in to come back to you eventually. <br>solve
+    </div>
+
+    <div class="puzzle-box">
+        <div class="sets">
+            <p>Set A = { 5, 14, 4, 21, 15 }</p>
+            <p>Set B = { 20, 13 }</p>
+            <p style="color: #ffffff; margin-top: 0.8em;">Operation: <strong>A + B</strong></p>
+            <p style="color: white">Ascending order</p>
+        </div>
+
+        <div class="hints">
+            <p><strong>0:</strong> The output is not what you think it is</p>
+            <p><strong>1:</strong> It is the end of a symphony. A saga, a play unravelled to reveal the end, a french word.</p>
+            <p><strong>2:</strong> Color my numbers through transliteration, give them a voice, convert their divergence of dialect.</p>
+            <p><strong>3:</strong> If you have finally found the word, despite its own scrabbled appearance, give your guess a try.</p>
+        </div>
+
+        <form id="cipher-form">
+            <input type="text" id="keyword" placeholder="Enter keyword..." autocomplete="off" required>
+            <button type="submit">ENTER</button>
+        </form>
+
+        <p id="status"></p>
+    </div>
+
+    <script>
+        document.getElementById("cipher-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const val = document.getElementById("keyword").value.trim().toLowerCase();
+            if (val === "denouement") {
+                window.location.href = "denouement.html";
+            } else {
+                document.getElementById("status").textContent = "INCORRECT SEQUENCE.";
+            }
+        });
+    </script>
+
+</body>
+</html>
